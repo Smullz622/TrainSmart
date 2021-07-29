@@ -76,7 +76,7 @@ public class Readiness implements Serializable
         this.recoveryScore = 0;
         this.hydration = false;
         this.hydrationScore = 0;
-        this.date = "01/01/1900";
+        this.date = "YYYY/MM/DD";
         
         this.totalScore = calcScore(hoursSlept, lastTrained, warmup, recovery, hydration);
     }
@@ -276,6 +276,16 @@ public class Readiness implements Serializable
     public void setTotalScore(int totalScore)
     {
         this.totalScore = totalScore;
+    }
+
+    public String getDate()
+    {
+        return date;
+    }
+
+    public void setDate(String date)
+    {
+        this.date = date;
     }
     
     

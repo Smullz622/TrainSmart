@@ -5,6 +5,7 @@
  */
 package trainsmart;
 
+import controller.ReadinessCtrl;
 import controller.SerializedCtrl;
 import controller.SetCtrl;
 import controller.SetListCtrl;
@@ -29,7 +30,7 @@ public class App
             
     public static void main(String[] args)
     {
-        SerializedCtrl serCtrl = new SerializedCtrl();
+        //SerializedCtrl serCtrl = new SerializedCtrl();
         
         //add elements needed for a new exercise
         ArrayList<Set> sampleSet = new ArrayList();
@@ -40,14 +41,19 @@ public class App
         sampleMuscles.add("Glutes");
         
         //create linked list and test methods
-        ExerciseList exerciseList = new ExerciseList();
-        exerciseList.addExercise(new Exercise("Deadlift", sampleSet, sampleMuscles, "Legs", exerciseList.nextExOrderNum()));
-        System.out.println("\nAfter add:");
-        exerciseList.printList();
-        Exercise lunge = exerciseList.getExercise("Reverse Lunges");
-        exerciseList.removeExercise(lunge);
-        System.out.println("\nAfter remove:");
-        exerciseList.printList();
+//        ExerciseList exerciseList = new ExerciseList();
+//        exerciseList.addExercise(new Exercise("Deadlift", sampleSet, sampleMuscles, "Legs", exerciseList.nextExOrderNum()));
+//        System.out.println("\nAfter add:");
+//        exerciseList.printList();
+//        Exercise lunge = exerciseList.getExercise("Reverse Lunges");
+//        exerciseList.removeExercise(lunge);
+//        System.out.println("\nAfter remove:");
+//        exerciseList.printList();
+        
+        ReadinessCtrl rdCtrl = new ReadinessCtrl();
+        System.out.println("First result: " +rdCtrl.getMap().firstKey());
+        System.out.println("Last result: "+ rdCtrl.getMap().lastKey());
+                
     }
 
 }
