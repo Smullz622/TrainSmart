@@ -30,9 +30,10 @@ public class ReadinessDetailUI extends javax.swing.JFrame
     public ReadinessDetailUI(TreeMap<String, Readiness> map)
     {
 
-        initComponents();
-        currentKey = dateTxt.getText();
+        initComponents();        
         this.map = map;
+        currentKey = map.firstKey();
+        setOutput();
     }
 
     public String getCurrentKey()
@@ -74,10 +75,12 @@ public class ReadinessDetailUI extends javax.swing.JFrame
         rdDelete = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         dateTxt = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         rdSearchText = new javax.swing.JTextField();
         rdSearchBtn = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        scoreLabe1l = new javax.swing.JLabel();
+        scoreResultLabel = new javax.swing.JLabel();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -152,94 +155,7 @@ public class ReadinessDetailUI extends javax.swing.JFrame
 
         dateTxt.setText("YYYY/MM/DD");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(daysSinceTrainBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(sleepHours, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(hydrationChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(rdPrevious)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rdNext)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rdAdd))
-                            .addComponent(jLabel3))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(recoveryChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(rdDelete))))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(rdUpdate)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(32, 32, 32)
-                            .addComponent(warmupChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(sleepHours, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(daysSinceTrainBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(recoveryChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(warmupChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(hydrationChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rdPrevious)
-                    .addComponent(rdUpdate)
-                    .addComponent(rdNext)
-                    .addComponent(rdAdd)
-                    .addComponent(rdDelete))
-                .addContainerGap())
-        );
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel6.setText("Readiness Assessment:");
-
+        jLabel8.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
         jLabel8.setText("Search by Date (YYYY/MM/DD):");
 
         rdSearchBtn.setText("Search");
@@ -251,6 +167,110 @@ public class ReadinessDetailUI extends javax.swing.JFrame
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(rdPrevious)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(rdNext)
+                                        .addGap(127, 127, 127)
+                                        .addComponent(rdUpdate)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(rdAdd))
+                                    .addComponent(jLabel3))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(34, 34, 34)
+                                        .addComponent(rdDelete))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(sleepHours, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(daysSinceTrainBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(recoveryChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(warmupChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(hydrationChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(rdSearchText, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rdSearchBtn))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(237, 237, 237)
+                        .addComponent(jLabel8)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdSearchText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rdSearchBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(sleepHours, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(daysSinceTrainBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(recoveryChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel4))
+                    .addComponent(warmupChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(hydrationChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdPrevious)
+                    .addComponent(rdUpdate)
+                    .addComponent(rdNext)
+                    .addComponent(rdAdd)
+                    .addComponent(rdDelete))
+                .addContainerGap())
+        );
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel6.setText("Readiness Assessment");
+
+        scoreLabe1l.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        scoreLabe1l.setText("Your  score is: ");
+
+        scoreResultLabel.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        scoreResultLabel.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -261,62 +281,33 @@ public class ReadinessDetailUI extends javax.swing.JFrame
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(230, 230, 230)
-                                .addComponent(jLabel6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdSearchText, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(56, 56, 56)
-                                .addComponent(rdSearchBtn)))
+                        .addGap(212, 212, 212)
+                        .addComponent(scoreLabe1l)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scoreResultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel6)
-                .addGap(33, 33, 33)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(rdSearchText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rdSearchBtn))
-                .addGap(79, 79, 79)
+                    .addComponent(scoreLabe1l)
+                    .addComponent(scoreResultLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGap(102, 102, 102))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void rdDeleteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdDeleteActionPerformed
-    {//GEN-HEADEREND:event_rdDeleteActionPerformed
-        currentKey = dateTxt.getText();
-        if (map.containsKey(currentKey))
-        {
-            map.remove(currentKey);
-        } else
-        {
-            System.out.println("Key Not Found");
-        }
-    }//GEN-LAST:event_rdDeleteActionPerformed
-
-    private void rdPreviousActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdPreviousActionPerformed
-    {//GEN-HEADEREND:event_rdPreviousActionPerformed
-        String lower = map.lowerKey(currentKey);
-        if (lower == null)
-        {
-            currentKey = map.lastKey();            
-        }
-        else{
-            currentKey = lower;
-        }        
-        setOutput();
-    }//GEN-LAST:event_rdPreviousActionPerformed
 
     private void rdSearchBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdSearchBtnActionPerformed
     {//GEN-HEADEREND:event_rdSearchBtnActionPerformed
@@ -332,35 +323,82 @@ public class ReadinessDetailUI extends javax.swing.JFrame
         setOutput();
     }//GEN-LAST:event_rdSearchBtnActionPerformed
 
-    private void rdUpdateActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdUpdateActionPerformed
-    {//GEN-HEADEREND:event_rdUpdateActionPerformed
-        getInput();
-        map.get(currentKey).setDate(dateIn);
-        map.get(currentKey).setHoursSlept(hoursSleptIn);
-        map.get(currentKey).setHydration(hydrationIn);
-        map.get(currentKey).setLastTrained(daysTrainedIn);
-        map.get(currentKey).setRecovery(recoveryIn);
-        map.get(currentKey).setWarmup(warmupIn);
-    }//GEN-LAST:event_rdUpdateActionPerformed
+    private void rdDeleteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdDeleteActionPerformed
+    {//GEN-HEADEREND:event_rdDeleteActionPerformed
+        currentKey = dateTxt.getText();
+        String lower = map.lowerKey(currentKey);
+        if (map.containsKey(currentKey))
+        {
+            map.remove(currentKey);
+        } else
+        {
+            System.out.println("Key Not Found");
+        }
+        currentKey = lower;
+        setOutput();
+
+    }//GEN-LAST:event_rdDeleteActionPerformed
+
+    private void rdAddActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdAddActionPerformed
+    {//GEN-HEADEREND:event_rdAddActionPerformed
+        map.put("YYYY/MM/DD", new Readiness());
+        currentKey = "YYYY/MM/DD";
+        setOutput();
+        // getInput();
+        // map.put(currentKey, new Readiness(hoursSleptIn, daysTrainedIn, warmupIn, recoveryIn, hydrationIn, dateIn));
+    }//GEN-LAST:event_rdAddActionPerformed
 
     private void rdNextActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdNextActionPerformed
     {//GEN-HEADEREND:event_rdNextActionPerformed
         String higher = map.higherKey(currentKey);
         if (higher == null)
         {
-            currentKey = map.firstKey();           
+            currentKey = map.firstKey();
         }
-        else{
+        else
+        {
             currentKey = higher;
         }
         setOutput();
     }//GEN-LAST:event_rdNextActionPerformed
 
-    private void rdAddActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdAddActionPerformed
-    {//GEN-HEADEREND:event_rdAddActionPerformed
+    private void rdUpdateActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdUpdateActionPerformed
+    {//GEN-HEADEREND:event_rdUpdateActionPerformed
         getInput();
-        map.put(currentKey, new Readiness(hoursSleptIn, daysTrainedIn, warmupIn, recoveryIn, hydrationIn, dateIn));
-    }//GEN-LAST:event_rdAddActionPerformed
+        currentKey = dateTxt.getText();
+        if (!map.containsKey(currentKey))
+        {
+            map.put(currentKey, new Readiness());
+            if (map.containsKey("YYYY/MM/DD"))
+            {
+                map.remove("YYYY/MM/DD");
+            }
+
+        }
+        map.get(currentKey).setDate(dateIn);
+        map.get(currentKey).setHoursSlept(hoursSleptIn);
+        map.get(currentKey).setHydration(hydrationIn);
+        map.get(currentKey).setLastTrained(daysTrainedIn);
+        map.get(currentKey).setRecovery(recoveryIn);
+        map.get(currentKey).setWarmup(warmupIn);
+        map.get(currentKey).setTotalScore(hoursSleptIn, daysTrainedIn, warmupIn, recoveryIn, hydrationIn);
+
+        setOutput();
+    }//GEN-LAST:event_rdUpdateActionPerformed
+
+    private void rdPreviousActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rdPreviousActionPerformed
+    {//GEN-HEADEREND:event_rdPreviousActionPerformed
+        String lower = map.lowerKey(currentKey);
+        if (lower == null)
+        {
+            currentKey = map.lastKey();
+        }
+        else
+        {
+            currentKey = lower;
+        }
+        setOutput();
+    }//GEN-LAST:event_rdPreviousActionPerformed
 
     /**
      * @param args the command line arguments
@@ -410,7 +448,7 @@ public class ReadinessDetailUI extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField dateTxt;
-    public javax.swing.JComboBox daysSinceTrainBox;
+    private javax.swing.JComboBox daysSinceTrainBox;
     private javax.swing.JComboBox<String> hydrationChk;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
@@ -422,15 +460,17 @@ public class ReadinessDetailUI extends javax.swing.JFrame
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JButton rdAdd;
-    public javax.swing.JButton rdDelete;
-    public javax.swing.JButton rdNext;
-    public javax.swing.JButton rdPrevious;
+    private javax.swing.JButton rdAdd;
+    private javax.swing.JButton rdDelete;
+    private javax.swing.JButton rdNext;
+    private javax.swing.JButton rdPrevious;
     public javax.swing.JButton rdSearchBtn;
     public javax.swing.JTextField rdSearchText;
-    public javax.swing.JButton rdUpdate;
-    public javax.swing.JComboBox<String> recoveryChk;
-    public javax.swing.JComboBox<String> sleepHours;
+    private javax.swing.JButton rdUpdate;
+    private javax.swing.JComboBox<String> recoveryChk;
+    private javax.swing.JLabel scoreLabe1l;
+    private javax.swing.JLabel scoreResultLabel;
+    private javax.swing.JComboBox<String> sleepHours;
     private javax.swing.JComboBox<String> warmupChk;
     // End of variables declaration//GEN-END:variables
 
@@ -515,6 +555,8 @@ public class ReadinessDetailUI extends javax.swing.JFrame
         setRecoveryOutput();
         setWarmupOutput();
         setHydrationOutput();
+        int score = map.get(currentKey).getTotalScore();
+        scoreResultLabel.setText(String.valueOf(score));
     }
 
     private void setHoursSleptOutput()

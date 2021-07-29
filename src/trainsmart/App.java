@@ -51,8 +51,6 @@ public class App
 //        exerciseList.printList();
         
         ReadinessCtrl rdCtrl = new ReadinessCtrl();
-        System.out.println("First result: " +rdCtrl.getMap().firstKey());
-        System.out.println("Last result: "+ rdCtrl.getMap().lastKey());
                 
     }
 

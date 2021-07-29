@@ -268,16 +268,21 @@ public class Readiness implements Serializable
         return "Readiness{" + "hoursSlept=" + hoursSlept + ", sleepScore=" + sleepScore + ", lastTrained=" + lastTrained + ", lastTrainScore=" + lastTrainScore + ", warmup=" + warmup + ", warmupScore=" + warmupScore + ", recovery=" + recovery + ", recoveryScore=" + recoveryScore + ", hydration=" + hydration + ", hydrationScore=" + hydrationScore + '}';
     }
 
-     public int getTotalScore()
-    {
+     public int getTotalScore(){
+                 
         return totalScore;
     }
 
-    public void setTotalScore(int totalScore)
-    {
-        this.totalScore = totalScore;
+    public void setTotalScore(int hoursSlept, int lastTrained, boolean warmup, boolean recovery, boolean hydration){
+  
+        int sleep = sleepScore(hoursSlept);
+        int daysSinceTrained = lastTrainScore(lastTrained);
+        int ifWarmup = boolScores(warmup);
+        int ifRecovery = boolScores(recovery);
+        int ifHydrated = boolScores(hydration);
+        
+        this.totalScore = sleep + daysSinceTrained + ifWarmup + ifRecovery + ifHydrated;    
     }
-
     public String getDate()
     {
         return date;
