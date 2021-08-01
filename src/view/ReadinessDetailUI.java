@@ -81,6 +81,8 @@ public class ReadinessDetailUI extends javax.swing.JFrame
         jLabel6 = new javax.swing.JLabel();
         scoreLabe1l = new javax.swing.JLabel();
         scoreResultLabel = new javax.swing.JLabel();
+        scoreSummary = new javax.swing.JLabel();
+        summaryWarning = new javax.swing.JLabel();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -186,7 +188,7 @@ public class ReadinessDetailUI extends javax.swing.JFrame
                                         .addComponent(rdPrevious)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(rdNext)
-                                        .addGap(127, 127, 127)
+                                        .addGap(114, 114, 114)
                                         .addComponent(rdUpdate)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(rdAdd))
@@ -209,12 +211,12 @@ public class ReadinessDetailUI extends javax.swing.JFrame
                                 .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel5)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
+                        .addGap(216, 216, 216)
                         .addComponent(rdSearchText, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rdSearchBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(237, 237, 237)
+                        .addGap(254, 254, 254)
                         .addComponent(jLabel8)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -252,7 +254,7 @@ public class ReadinessDetailUI extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(hydrationChk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGap(18, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdPrevious)
                     .addComponent(rdUpdate)
@@ -271,6 +273,12 @@ public class ReadinessDetailUI extends javax.swing.JFrame
         scoreResultLabel.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         scoreResultLabel.setText(" ");
 
+        scoreSummary.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        scoreSummary.setText(" ");
+
+        summaryWarning.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        summaryWarning.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -281,29 +289,37 @@ public class ReadinessDetailUI extends javax.swing.JFrame
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(scoreLabe1l)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(scoreResultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(227, 227, 227)
+                                .addComponent(scoreLabe1l)
+                                .addGap(18, 18, 18)
+                                .addComponent(scoreResultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(scoreSummary, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(summaryWarning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel6)
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(scoreLabe1l)
                     .addComponent(scoreResultLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(scoreSummary)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(summaryWarning)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102))
+                .addGap(100, 100, 100))
         );
 
         pack();
@@ -382,7 +398,7 @@ public class ReadinessDetailUI extends javax.swing.JFrame
         map.get(currentKey).setRecovery(recoveryIn);
         map.get(currentKey).setWarmup(warmupIn);
         map.get(currentKey).setTotalScore(hoursSleptIn, daysTrainedIn, warmupIn, recoveryIn, hydrationIn);
-
+        
         setOutput();
     }//GEN-LAST:event_rdUpdateActionPerformed
 
@@ -470,7 +486,9 @@ public class ReadinessDetailUI extends javax.swing.JFrame
     private javax.swing.JComboBox<String> recoveryChk;
     private javax.swing.JLabel scoreLabe1l;
     private javax.swing.JLabel scoreResultLabel;
+    private javax.swing.JLabel scoreSummary;
     private javax.swing.JComboBox<String> sleepHours;
+    private javax.swing.JLabel summaryWarning;
     private javax.swing.JComboBox<String> warmupChk;
     // End of variables declaration//GEN-END:variables
 
@@ -557,6 +575,7 @@ public class ReadinessDetailUI extends javax.swing.JFrame
         setHydrationOutput();
         int score = map.get(currentKey).getTotalScore();
         scoreResultLabel.setText(String.valueOf(score));
+        setScoreSummaryMessage();
     }
 
     private void setHoursSleptOutput()
@@ -617,6 +636,25 @@ public class ReadinessDetailUI extends javax.swing.JFrame
         } else
         {
             hydrationChk.setSelectedIndex(0);
+        }
+    }
+
+    private void setScoreSummaryMessage()
+    {
+        int score = map.get(currentKey).getTotalScore();
+        summaryWarning.setText("");
+        if (score >84)
+        {
+            scoreSummary.setText("Great Score! Proceed with training as planned");
+        }
+        else if (score > 49)
+        {
+            scoreSummary.setText("Score is not ideal. Consider making minor workout modifications.");
+        }
+        else
+        {
+            scoreSummary.setText("Your score indicates your body is not prepared for this workout.");
+            summaryWarning.setText("Make modifications or address recovery strategies.");
         }
     }
 }
