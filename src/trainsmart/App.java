@@ -9,6 +9,7 @@ import controller.ReadinessCtrl;
 import controller.SerializedCtrl;
 import controller.SetCtrl;
 import controller.SetListCtrl;
+import controller.UserCtrl;
 import java.util.ArrayList;
 import model.Exercise;
 import model.ExerciseList;
@@ -27,11 +28,11 @@ public class App
      * @param args the command line arguments
      */
     SerializedCtrl serCtrl;
-            
+
     public static void main(String[] args)
     {
         //SerializedCtrl serCtrl = new SerializedCtrl();
-        
+
         //add elements needed for a new exercise
         ArrayList<Set> sampleSet = new ArrayList();
         sampleSet.add(new Set(225.0, 5));
@@ -39,7 +40,7 @@ public class App
         ArrayList<String> sampleMuscles = new ArrayList();
         sampleMuscles.add("Hamstrings");
         sampleMuscles.add("Glutes");
-        
+
         //create linked list and test methods
 //        ExerciseList exerciseList = new ExerciseList();
 //        exerciseList.addExercise(new Exercise("Deadlift", sampleSet, sampleMuscles, "Legs", exerciseList.nextExOrderNum()));
@@ -49,9 +50,9 @@ public class App
 //        exerciseList.removeExercise(lunge);
 //        System.out.println("\nAfter remove:");
 //        exerciseList.printList();
-        
-        ReadinessCtrl rdCtrl = new ReadinessCtrl();
-                
+//        ReadinessCtrl rdCtrl = new ReadinessCtrl();
+        UserCtrl userCtrl = new UserCtrl();
+
     }
 
 }

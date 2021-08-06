@@ -19,9 +19,9 @@ public class Athlete extends User
     private String goals;
     private int athleteCode;
 
-    public Athlete(String trainingPhase, String experienceLvl, String goals, int athleteCode, String username, String password, String name, String birthDate, String gender, String email)
+    public Athlete(String trainingPhase, String experienceLvl, String goals, int athleteCode, String username, String password, String name, String birthDate, String email)
     {
-        super(username, password, name, birthDate, gender, email);
+        super(username, password, name, birthDate, email);
         this.trainingPhase = trainingPhase;
         this.experienceLvl = experienceLvl;
         this.goals = goals;

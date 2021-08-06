@@ -17,9 +17,9 @@ public class User extends Person
     private String username;
     private String password;
 
-    public User(String username, String password, String name, String birthDate, String gender, String email)
+    public User(String username, String password, String name, String birthDate, String email)
     {
-        super(name, birthDate, gender, email);
+        super(name, birthDate, email);
         this.username = username;
         this.password = password;
     }
@@ -27,8 +27,8 @@ public class User extends Person
     public User()
     {
         super();
-        this.username = "User";
-        this.password = "t3mPD3f@u1t";
+        this.username = "user";
+        this.password = "password";
     }
 
     public String getUsername()

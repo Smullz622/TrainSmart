@@ -27,9 +27,9 @@ public class TestHarness
     public void testClassHierarchy()
     {
         //test toString()
-        Person t1 = new Person("Sarah Smulligan", "06/22/93", "F", "smm5878@psu.edu");
-        Person t2 = new User("smullz", "t3s1P@ss", "Sarah", "June 22, 1993", "Female", "smacklin622@gmail.com");
-        Person t3 = new Athlete("hypertrophy", "intermediate", "build muscle", 123, "smullz622", "P@ssw03d", "Sarah S", "06-22-93", "female", "smulligan622@gmail.com");
+        Person t1 = new Person("Sarah Smulligan", "06/22/93", "smm5878@psu.edu");
+        Person t2 = new User("smullz", "t3s1P@ss", "Sarah", "June 22, 1993", "smacklin622@gmail.com");
+        Person t3 = new Athlete("hypertrophy", "intermediate", "build muscle", 123, "smullz622", "P@ssw03d", "Sarah S", "06-22-93", "smulligan622@gmail.com");
         ArrayList<Person> pTest = new ArrayList();
         pTest.add(t1);
         pTest.add(t2);
@@ -41,8 +41,8 @@ public class TestHarness
         }
 
         //test exists()
-        User u1 = new User("smullz", "t3s1P@ss", "Sarah", "June 22, 1993", "Female", "smacklin622@gmail.com");
-        Athlete a1 = new Athlete("hypertrophy", "intermediate", "build muscle", 123, "smullz622", "P@ssw03d", "Sarah S", "06-22-93", "female", "smulligan622@gmail.com");
+        User u1 = new User("smullz", "t3s1P@ss", "Sarah", "June 22, 1993", "smacklin622@gmail.com");
+        Athlete a1 = new Athlete("hypertrophy", "intermediate", "build muscle", 123, "smullz622", "P@ssw03d", "Sarah S", "06-22-93", "smulligan622@gmail.com");
         ArrayList<User> uTest = new ArrayList();
         uTest.add(u1);
         ArrayList<Athlete> aTest = new ArrayList();
@@ -60,7 +60,7 @@ public class TestHarness
     private void testPerson()
     {
         //test User class
-        Person testU = new Person("Sarah", "06/22/1993", "Female", "smm5878@psu.edu");
+        Person testU = new Person("Sarah", "06/22/1993", "smm5878@psu.edu");
         if (testU != null)
         {
             System.out.println("USER CLASS CREATED");
@@ -74,10 +74,7 @@ public class TestHarness
             System.out.println("Previous birthdate: " + testU.getBirthDate());
             testU.setBirthDate("06/22/1992");
             System.out.println("Updated birthdate: " + testU.getBirthDate());
-            //test gender methods
-            System.out.println("Previous gender: " + testU.getGender());
-            testU.setGender("Undisclosed");
-            System.out.println("Updated gender: " + testU.getGender());
+            
         }
         //test User class empty constructor
         Person testUemp = new Person();

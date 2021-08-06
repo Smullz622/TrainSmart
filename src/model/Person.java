@@ -19,11 +19,10 @@ public class Person
     private String gender;
     private String email;
 
-    public Person(String name, String birthDate, String gender, String email)
+    public Person(String name, String birthDate, String email)
     {
         this.name = name;
         this.birthDate = birthDate;
-        this.gender = gender;
         this.email = email;
         
     }
@@ -32,7 +31,6 @@ public class Person
     {
         this.name = "None";
         this.birthDate = "Unknown";
-        this.gender = "Unknown";
         this.email = "Unknown";
     }
 
@@ -56,16 +54,6 @@ public class Person
         this.birthDate = birthDate;
     }
 
-    public String getGender()
-    {
-        return gender;
-    }
-
-    public void setGender(String gender)
-    {
-        this.gender = gender;
-    }
-    
 
     public String getEmail()
     {
