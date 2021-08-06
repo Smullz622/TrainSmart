@@ -17,13 +17,11 @@ public class Person
     private String name;
     private String birthDate;
     private String gender;
-    private String email;
 
-    public Person(String name, String birthDate, String email)
+    public Person(String name, String birthDate)
     {
         this.name = name;
         this.birthDate = birthDate;
-        this.email = email;
         
     }
     
@@ -31,7 +29,6 @@ public class Person
     {
         this.name = "None";
         this.birthDate = "Unknown";
-        this.email = "Unknown";
     }
 
     public String getName()
@@ -55,35 +52,27 @@ public class Person
     }
 
 
-    public String getEmail()
-    {
-        return email;
-    }
 
-    public void setEmail(String email)
-    {
-        this.email = email;
-    }
     
-    //method to check if a person exists that is using the given email (ie. if they already have an account)
-    public boolean exists(ArrayList<Person> registeredPersons)
-    {
-        boolean check = false;
-        for (int i = 0; i < registeredPersons.size(); ++i)
-        {
-            if (registeredPersons.get(i).getEmail().compareTo(this.email) == 0)
-            {
-                check = true;
-                System.out.println("An account using this email already exists.");
-            }
-        }
-        return check;
-    }
+  //  method to check if a person exists that is using the given email (ie. if they already have an account)
+//    public boolean exists(ArrayList<Person> registeredPersons)
+//    {
+//        boolean check = false;
+//        for (int i = 0; i < registeredPersons.size(); ++i)
+//        {
+//            if (registeredPersons.get(i).getUsername().compareTo(this.username) == 0)
+//            {
+//                check = true;
+//                System.out.println("An account using this email already exists.");
+//            }
+//        }
+//        return check;
+//    }
     
      @Override
     public String toString()
     {
-        return "Person{" + "name: " + name + ", birth date: " + birthDate + ", gender: " + gender + ", email: "+ email + '}';
+        return "Person{" + "name: " + name + ", birth date: " + birthDate + '}';
     }
     
 }

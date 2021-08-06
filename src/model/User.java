@@ -17,9 +17,9 @@ public class User extends Person
     private String username;
     private String password;
 
-    public User(String username, String password, String name, String birthDate, String email)
+    public User(String username, String password, String name, String birthDate)
     {
-        super(name, birthDate, email);
+        super(name, birthDate);
         this.username = username;
         this.password = password;
     }

@@ -17,8 +17,8 @@ public class UserHashMap
 
     public UserHashMap()
     {
-       userMap.put("smulligan622", new User("smulligan622", "p@ssw0rd", "Sarah Smulligan", "06-22-93", "smm5878@psu.edu"));
-       userMap.put("user123", new User("user123", "passphrase", "Jane Doe", "01-01-80", "jad123@psu.edu"));
+       userMap.put("smulligan622", new User("smulligan622", "p@ssw0rd", "Sarah Smulligan", "06-22-93"));
+       userMap.put("user123", new User("user123", "passphrase", "Jane Doe", "01-01-80"));
     }
 
 //    private void createMap()

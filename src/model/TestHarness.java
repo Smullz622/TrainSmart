@@ -27,9 +27,9 @@ public class TestHarness
     public void testClassHierarchy()
     {
         //test toString()
-        Person t1 = new Person("Sarah Smulligan", "06/22/93", "smm5878@psu.edu");
-        Person t2 = new User("smullz", "t3s1P@ss", "Sarah", "June 22, 1993", "smacklin622@gmail.com");
-        Person t3 = new Athlete("hypertrophy", "intermediate", "build muscle", 123, "smullz622", "P@ssw03d", "Sarah S", "06-22-93", "smulligan622@gmail.com");
+        Person t1 = new Person("Sarah Smulligan", "06/22/93");
+        Person t2 = new User("smullz", "t3s1P@ss", "Sarah", "June 22, 1993");
+        Person t3 = new Athlete("hypertrophy", "intermediate", "build muscle", 123, "smullz622", "P@ssw03d", "Sarah S", "06-22-93");
         ArrayList<Person> pTest = new ArrayList();
         pTest.add(t1);
         pTest.add(t2);
@@ -41,15 +41,15 @@ public class TestHarness
         }
 
         //test exists()
-        User u1 = new User("smullz", "t3s1P@ss", "Sarah", "June 22, 1993", "smacklin622@gmail.com");
-        Athlete a1 = new Athlete("hypertrophy", "intermediate", "build muscle", 123, "smullz622", "P@ssw03d", "Sarah S", "06-22-93", "smulligan622@gmail.com");
+        User u1 = new User("smullz", "t3s1P@ss", "Sarah", "June 22, 1993");
+        Athlete a1 = new Athlete("hypertrophy", "intermediate", "build muscle", 123, "smullz622", "P@ssw03d", "Sarah S", "06-22-93");
         ArrayList<User> uTest = new ArrayList();
         uTest.add(u1);
         ArrayList<Athlete> aTest = new ArrayList();
         aTest.add(a1);
         
         System.out.print("Person: ");
-        t1.exists(pTest);
+       // t1.exists(pTest);
         System.out.print("User: ");
         u1.exists(uTest, "smullz");
         System.out.print("Athlete: ");
@@ -60,7 +60,7 @@ public class TestHarness
     private void testPerson()
     {
         //test User class
-        Person testU = new Person("Sarah", "06/22/1993", "smm5878@psu.edu");
+        Person testU = new Person("Sarah", "06/22/1993");
         if (testU != null)
         {
             System.out.println("USER CLASS CREATED");
