@@ -16,6 +16,7 @@ import model.ExerciseList;
 import model.Readiness;
 import model.Set;
 import model.TestHarness;
+import model.WorkoutList;
 
 /**
  *
@@ -31,17 +32,17 @@ public class App
 
     public static void main(String[] args)
     {
-        //SerializedCtrl serCtrl = new SerializedCtrl();
+       // SerializedCtrl serCtrl = new SerializedCtrl();
 
         //add elements needed for a new exercise
-        ArrayList<Set> sampleSet = new ArrayList();
-        sampleSet.add(new Set(225.0, 5));
-        sampleSet.add(new Set(235.0, 8));
-        ArrayList<String> sampleMuscles = new ArrayList();
-        sampleMuscles.add("Hamstrings");
-        sampleMuscles.add("Glutes");
+//        ArrayList<Set> sampleSet = new ArrayList();
+//        sampleSet.add(new Set(225.0, 5));
+//        sampleSet.add(new Set(235.0, 8));
+//        ArrayList<String> sampleMuscles = new ArrayList();
+//        sampleMuscles.add("Hamstrings");
+//        sampleMuscles.add("Glutes");
 
-        //create linked list and test methods
+       // create linked list and test methods
 //        ExerciseList exerciseList = new ExerciseList();
 //        exerciseList.addExercise(new Exercise("Deadlift", sampleSet, sampleMuscles, "Legs", exerciseList.nextExOrderNum()));
 //        System.out.println("\nAfter add:");
@@ -50,8 +51,10 @@ public class App
 //        exerciseList.removeExercise(lunge);
 //        System.out.println("\nAfter remove:");
 //        exerciseList.printList();
-//        ReadinessCtrl rdCtrl = new ReadinessCtrl();
+ //       ReadinessCtrl rdCtrl = new ReadinessCtrl();
         UserCtrl userCtrl = new UserCtrl();
+        WorkoutList testWO = new WorkoutList();
+        System.out.println(testWO.getWorkoutList());
 
     }
 
