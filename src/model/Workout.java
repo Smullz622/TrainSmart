@@ -16,12 +16,9 @@ public class Workout
 {
     private String name;
     private ArrayList<Exercise> exercises;
-    // move into warmup class
-    //private ArrayList<String> warmups;
     private String compoundType;
 
     //full constructor
-
     public Workout(String name, ArrayList<Exercise> exercises, String compoundType)
     {
         this.name = name;
@@ -68,15 +65,6 @@ public class Workout
         this.exercises = exercises;
     }
 
-//    public ArrayList<String> getWarmups()
-//    {
-//        return warmups;
-//    }
-//
-//    public void setWarmups(ArrayList<String> warmups)
-//    {
-//        this.warmups = warmups;
-//    }
 
     @Override
     public String toString()

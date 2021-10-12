@@ -27,6 +27,7 @@ public class UserCtrl
     User currentUser;
     String currentKey;
     UserDetailUI detailUI;
+    boolean success;
 
     public UserCtrl()
     {
@@ -56,9 +57,11 @@ public class UserCtrl
                     {                        
                         loginUI.errorMsg.setText(" ");
                         detailUI = new UserDetailUI(currentUser);
-                        detailUI.setVisible(true);
-                        loginUI.setVisible(false);
-                        detailButtons();
+                        //get rid of detailUI visible & detailButtons() and trigger workout controller
+                        success = true;
+//                        detailUI.setVisible(true);
+//                        loginUI.setVisible(false);
+//                        detailButtons();
                     }                   
                 } else
                 {
@@ -136,6 +139,14 @@ public class UserCtrl
             }
             
         });
+    }
+    
+    public boolean getSuccess(){
+        return success;
+    }
+    
+    public UserLoginUI getLoginUI(){
+        return loginUI;
     }
 
 }

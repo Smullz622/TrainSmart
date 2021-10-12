@@ -10,6 +10,7 @@ import controller.SerializedCtrl;
 import controller.SetCtrl;
 import controller.SetListCtrl;
 import controller.UserCtrl;
+import controller.WorkoutCtrl;
 import java.util.ArrayList;
 import model.Exercise;
 import model.ExerciseList;
@@ -52,9 +53,20 @@ public class App
 //        System.out.println("\nAfter remove:");
 //        exerciseList.printList();
  //       ReadinessCtrl rdCtrl = new ReadinessCtrl();
+        
+//        WorkoutList testWO = new WorkoutList();
+//        System.out.println(testWO.getWorkoutList());
+        
+        //start with user login controller
+        //upon successful login, launch workout list UI
         UserCtrl userCtrl = new UserCtrl();
-        WorkoutList testWO = new WorkoutList();
-        System.out.println(testWO.getWorkoutList());
+        WorkoutCtrl woCtrl = new WorkoutCtrl();
+        while (!userCtrl.getSuccess()){
+            woCtrl.getWoListUI().setVisible(false);
+        }
+        userCtrl.getLoginUI().setVisible(false);
+        woCtrl.getWoListUI().setVisible(true);
+        
 
     }
 
